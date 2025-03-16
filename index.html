@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corruption Initiated</title>
+    <script>
+        function downloadImages() {
+            let images = [
+                "https://yourhost.com/image1.jpg",
+                "https://yourhost.com/image2.jpg",
+                "https://yourhost.com/image3.jpg"
+            ];
+
+            images.forEach((img) => {
+                let link = document.createElement("a");
+                link.href = img;
+                link.download = img.split("/").pop(); 
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+
+            document.getElementById("status").innerText = "Corruption Complete. You belong to me now.";
+        }
+    </script>
+</head>
+<body style="text-align:center; padding:50px; background-color:black; color:white;">
+    <h1>There's no turning back now, pet~</h1>
+    <p>Click the button below and let me take over your device~ 💕</p>
+    <button onclick="downloadImages()" style="padding:15px; font-size:18px; background-color:red; color:white; border:none; cursor:pointer;">Submit to Mommy</button>
+    <p id="status"></p>
+</body>
+</html>
